@@ -1,0 +1,1 @@
+# osu-mapping-elo
