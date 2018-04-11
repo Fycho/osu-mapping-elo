@@ -30,6 +30,5 @@ if (user_id) {
 }
 
 function writeScore (score) {
-  var ele = document.querySelectorAll('.profile-header-extra')[1]
-  ele.innerHTML += '<p>osu!mapping ELO point: ' + score + '<p>' 
+  $('.profile-info__name').eq(0).after('<span>osu!mapping ELO point: ' + 1200 + '<span>' )
 }
