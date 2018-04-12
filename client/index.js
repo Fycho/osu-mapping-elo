@@ -20,6 +20,7 @@ if (user_id) {
       if (xhr.responseText.result === 'success') {
         writeScore(xhr.responseText.user.elo_score)
       } else {
+        // todo: unranked & inactive conditions
         writeScore(1200)
       }
     }
@@ -30,5 +31,5 @@ if (user_id) {
 }
 
 function writeScore (score) {
-  $('.profile-info__name').eq(0).after('<span>osu!mapping ELO point: ' + 1200 + '<span>' )
+  $('.profile-info__name').eq(0).after('<span>osu!mapping ELO point: ' + score + '<span>' )
 }

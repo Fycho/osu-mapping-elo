@@ -6,14 +6,18 @@ var UserCheckin = require('../model').UserCheckin;
 var UserAddress = require('../model').UserAddress;
 var Role = require('../model').Role;
 
-/* User和Role中插入数据 */
-router.get('/', function(req, res, next) {
+/**
+ * restful api
+ * 查询User数据
+ */
+router.get('/user', function(req, res, next) {
   console.log(req.query.user_id)  
 	User.findOne({
     where: {
       user_id: req.query.user_id
     }
   }).then(function(user){
+    console.log(req.headers)
     res.set("Access-Control-Allow-Origin", "*");
     res.set("Access-Control-Allow-Headers", "X-Requested-With");
     res.set("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");

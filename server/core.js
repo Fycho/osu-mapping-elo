@@ -64,7 +64,7 @@ function std_n_cdf2 (a) {
  * @param {number} k 计算常数 
  * @return {array} 新ELO值
  */
-const calculateElo = (data, originElo, k) => {
+export const calculateElo = (data, originElo, k) => {
   // 样本平均值
   let avg = data.avg()
   // 样本数量
@@ -108,42 +108,42 @@ const calculateElo = (data, originElo, k) => {
     return +ownOriginal + +delta
   })
   
-  console.log('results', results)
+  // console.log('results', results)
   return results
 }
-
-let data = [
-  67.99,
-  84.07,
-  90.80,
-  78.10,
-  75.61,
-  60.48,
-  86.49,
-  65.51,
-  88.43,
-  91.70,
-  79.05,
-  86.68,
-  70.18,
-  89.12,
-  85.78
-]
-let ori = [
-  1200,
-  1050,
-  1075,
-  1100,
-  1125,
-  1150,
-  1175,
-  1200,
-  1225,
-  1250,
-  1275,
-  1300,
-  1325,
-  1350,
-  1375
-]
-calculateElo(data, ori, 16)
+// // test data
+// let data = [
+//   67.99,
+//   84.07,
+//   90.80,
+//   78.10,
+//   75.61,
+//   60.48,
+//   86.49,
+//   65.51,
+//   88.43,
+//   91.70,
+//   79.05,
+//   86.68,
+//   70.18,
+//   89.12,
+//   85.78
+// ]
+// let ori = [
+//   1200,
+//   1050,
+//   1075,
+//   1100,
+//   1125,
+//   1150,
+//   1175,
+//   1200,
+//   1225,
+//   1250,
+//   1275,
+//   1300,
+//   1325,
+//   1350,
+//   1375
+// ]
+// calculateElo(data, ori, 16)
