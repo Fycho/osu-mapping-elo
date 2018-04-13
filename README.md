@@ -8,9 +8,9 @@ osu!mapping Elo rating is an evaluation indicator based on the [Elo rating syste
 
 ## How to check a mapper's Elo rating?
 
-## How much can a contest affect my Elo rating?
+## How much can a contest affect Elo rating?
 
-To be counted into the Elo system, contests must meet these rules:
+To be included in the Elo system, contests must meet these rules:
 * Open access of information. (Everyone can check the information of this contest, including the hosts, judges, participants, detailed results)
 * Not an Aspire contest. (Judging should be under the Ranking Criteria)
 * Have a certain amount of judges, including some (Ex-) BN/QATs. (To keep a high level of judging)
