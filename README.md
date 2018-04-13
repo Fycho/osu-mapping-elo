@@ -4,7 +4,7 @@
 
 ## What is osu!mapping Elo rating?
 
-osu!mapping Elo Rating is an evaluation indicator based on the [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system) to assess osu! mappers' skill by analysing the results of convincing mapping contests.
+osu!mapping Elo rating is an evaluation indicator based on the [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system) to assess osu! mappers' skill by analysing the results of convincing mapping contests.
 
 ## How to check a mapper's Elo rating?
 
@@ -27,11 +27,11 @@ According to the composition of the judges who finish scoring at last and other 
 
 Contest management and judging must be fair. Issues like unreasonable scoring will cause the contest to be disqualified from system or get dan penalty.
 
-Dans of the contest affect the K-factor in the Elo system. In a D1/D2/D3/D4 contest, the maximum ratings change is a little less than 100/200/300/400 points with infinite participants.
+Dan of the contest affect the K-factor in the Elo system. In a D1/D2/D3/D4 contest, the maximum ratings change is a little less than 100/200/300/400 points with infinite participants.
 - Generally speaking, the more people who participate in the competition, the higher ratings winner will increase.
 
 If a contest contains 2 or more songs to be competed, each song will be considered as a single contest.
-- Exceptions: If a contest acquires mappers to map all the songs that hosts provided, it is still considered as a single one. Besides, this contest may have +1 dan if not a D4 one because multiple songs may demonstrate mappers' level more effectively.
+- Exceptions: If a contest acquires mappers to map all the songs that hosts provided, it is still considered as a single one. Besides, this contest may have +1 dan if not a D4 one because mapping multiple songs may demonstrate mappers' level more effectively.
 
 ## Changelog
 
