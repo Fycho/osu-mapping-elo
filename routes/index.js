@@ -27,7 +27,7 @@ router.get('/user', function(req, res, next) {
     } else {
       res.end(JSON.stringify({
         result: 'fail',
-        message: 'Data Not Found'
+        message: 'Unranked'
       }))
     }
 	}).catch(next);
@@ -37,8 +37,8 @@ router.get('/user', function(req, res, next) {
 router.get('*', function(req, res, next) {
   res.set('Content-Type', 'text/html; charset=utf-8');
   res.end(JSON.stringify({
-    result: 'fail',
-    message: 'Data Not Found'
+    result: 'error',
+    message: '404 Not Found'
   }));
 });
 

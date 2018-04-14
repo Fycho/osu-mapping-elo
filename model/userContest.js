@@ -6,18 +6,18 @@ module.exports = function (sequelize, DataTypes) {
     user_id: {
       type: DataTypes.INTEGER(11),
       field: 'user_id',
-      // references: {
-      //   model: 'User',
-      //   key: 'user_id'
-      // },
+      references: {
+        model: 'User',
+        key: 'user_id'
+      },
     },
     contest_id: {
       type: DataTypes.INTEGER(11),
       field: 'contest_id',
-      // references: {
-      //   model: 'Contest',
-      //   key: 'contest_id'
-      // },
+      references: {
+        model: 'Contest',
+        key: 'contest_id'
+      },
     },
     score: { type: DataTypes.INTEGER(11), allowNull: false, defaultValue: 0, comment: '比赛得分' }
   },
