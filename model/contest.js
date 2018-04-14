@@ -4,7 +4,8 @@ module.exports = function (sequelize, DataTypes) {
   return sequelize.define('Content', {
     contest_id: { type: DataTypes.INTEGER(11), autoIncrement: true, primaryKey: true },
     title: { type: DataTypes.STRING(64), allowNull: true, comment: '比赛昵称' },
-    create_at: { type: DataTypes.DATE, allowNull: true, defaultValue: new Date, comment: '比赛时间' }
+    k: { type: DataTypes.INTEGER, allowNull: false, comment: '常数K' },
+    create_at: { type: DataTypes.DATE, allowNull: true, comment: '比赛时间' },
   }, {
       timestamps: false,
       underscored: false,

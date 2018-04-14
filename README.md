@@ -1,6 +1,6 @@
 # osu!mapping Elo Rating
 `![Header](logo link)`
-[![license:mit](https://img.shields.io/badge/license-mit-blue.svg)](https://opensource.org/licenses/MIT)
+[![license:MIT](https://img.shields.io/badge/license-mit-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## What is osu!mapping Elo rating?
 
