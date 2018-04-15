@@ -7,6 +7,6 @@ exports.sequelize = function () {
     'mapping_elo',
     'root',
     'root', 
-    { host: '127.0.0.1', port: 3306, logging: console.log }
+    { host: '127.0.0.1', port: 3306, logging: ()=>{}, dialect: 'mysql' }
   );
 }

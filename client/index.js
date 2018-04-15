@@ -18,7 +18,7 @@ if (user_id) {
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
       if (xhr.responseText.result === 'success') {
-        writeScore(xhr.responseText.user.elo_score)
+        writeScore(xhr.responseText.user.elo)
       } else {
         // todo: unranked & inactive conditions
         writeScore(1200)

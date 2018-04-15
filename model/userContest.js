@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function (sequelize, DataTypes) {
-  return sequelize.define('UserCheckin', {
+  return sequelize.define('UserContest', {
     id: { type: DataTypes.INTEGER(11), autoIncrement: true, primaryKey: true },
     user_id: {
       type: DataTypes.INTEGER(11),
@@ -19,13 +19,15 @@ module.exports = function (sequelize, DataTypes) {
         key: 'contest_id'
       },
     },
-    score: { type: DataTypes.INTEGER(11), allowNull: false, defaultValue: 0, comment: '比赛得分' }
+    name: { type: DataTypes.STRING(128), allowNull: true },
+    team: { type: DataTypes.INTEGER(11), defaultValue: 0, allowNull: false },    
+    score: { type: DataTypes.DECIMAL(8, 4), allowNull: false, defaultValue: 0, comment: '比赛得分' }
   },
     {
       underscored: false,
       timestamps: false,
       tableName: 'user_contest',
-      comment: '用户登录信息',
+      comment: '',
       charset: 'utf8mb4',
       collate: 'utf8mb4_general_ci',
       indexes: [{

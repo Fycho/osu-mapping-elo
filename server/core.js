@@ -59,12 +59,13 @@ function std_n_cdf2 (a) {
 }
 
 /**
+ * 小组成员超过1位传入小组得分和组员的原始elo平均值
  * @param {array} data 原始数据数组 - 最终得分
  * @param {array} originElo 原始数据数组 - 原始ELO值
  * @param {number} k 计算常数 
- * @return {array} 新ELO值
+ * @return {array} ELO变动值
  */
-export const calculateElo = (data, originElo, k) => {
+module.exports = (data, originElo, k) => {
   // 样本平均值
   let avg = data.avg()
   // 样本数量
@@ -103,47 +104,9 @@ export const calculateElo = (data, originElo, k) => {
       return 1 / (1 + Math.pow(10, (item1 - ownOriginal) / 400))
     }).sum()
     // ELO变动值
-    let delta = (actual - forecast) * k
-    // 新ELO
-    return +ownOriginal + +delta
+    return (actual - forecast) * k
   })
   
   // console.log('results', results)
   return results
 }
-// // test data
-// let data = [
-//   67.99,
-//   84.07,
-//   90.80,
-//   78.10,
-//   75.61,
-//   60.48,
-//   86.49,
-//   65.51,
-//   88.43,
-//   91.70,
-//   79.05,
-//   86.68,
-//   70.18,
-//   89.12,
-//   85.78
-// ]
-// let ori = [
-//   1200,
-//   1050,
-//   1075,
-//   1100,
-//   1125,
-//   1150,
-//   1175,
-//   1200,
-//   1225,
-//   1250,
-//   1275,
-//   1300,
-//   1325,
-//   1350,
-//   1375
-// ]
-// calculateElo(data, ori, 16)
