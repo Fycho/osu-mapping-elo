@@ -39,6 +39,7 @@ const calcuByStep = (contests, i) => {
     },
     include: [User]
   }).then(uc => {
+    // todo: 需支持小组赛
     let users = uc.map(item => item.User.user_id)
     let data = uc.map(item => +item.score)
     let originElo = uc.map(item => +item.User.elo)
@@ -53,7 +54,6 @@ const calcuByStep = (contests, i) => {
           where: {
             user_id: user_id
           }
-        }).then(() => {
         })
       promises.push(p)
     })
