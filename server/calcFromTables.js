@@ -2,6 +2,8 @@ var calculateElo = require('./core')
 var User = require('../model').User
 var Contest = require('../model').Contest
 var UserContest = require('../model').UserContest
+var sequelize = require('../model/_db').sequelize();
+var Op = require('sequelize').Op
 
 /**
  * calculate the sum of every elements of the input array
@@ -22,6 +24,11 @@ const arraySum = (...arguments) => {
   return sum
 }
 
+/**
+ * 单次分布计算
+ * @param {array} contests 
+ * @param {number} i 
+ */
 const calcuByStep = (contests, i) => {
   console.log(i)
   let k = contests[i].k
@@ -43,10 +50,11 @@ const calcuByStep = (contests, i) => {
       let p = User.update({
         elo: originElo[index] + deltas[index]
       }, {
-        where: {
-          user_id: user_id
-        }
-      })
+          where: {
+            user_id: user_id
+          }
+        }).then(() => {
+        })
       promises.push(p)
     })
     Promise.all(promises).then(() => {
@@ -56,12 +64,19 @@ const calcuByStep = (contests, i) => {
     })
   })
 }
+
 /**
  * 批量从1200重新计算所有用户elo
  */
-Contest.findAll({
-  attributes: ['contest_id', 'k', 'sort_order'],
-  order: [['sort_order', 'ASC']]
-}).then(contests => {
-  calcuByStep(contests, 0)
-})
+const recalculateAll = () => {
+  sequelize.query('UPDATE user SET elo=1200').then(rows => {
+    Contest.findAll({
+      attributes: ['contest_id', 'k', 'sort_order'],
+      order: [['sort_order', 'ASC']]
+    }).then(contests => {
+      calcuByStep(contests, 0)
+    })
+  })
+}
+
+recalculateAll()

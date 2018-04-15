@@ -35,7 +35,7 @@ module.exports = function (sequelize, DataTypes) {
         method: 'BTREE',
         fields: ['user_id']
       }, {
-        name: 'userComntest_contest_id',
+        name: 'userContest_contest_id',
         method: 'BTREE',
         fields: ['contest_id']
       }]
