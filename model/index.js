@@ -3,7 +3,7 @@
 var sequelize = require('./_db').sequelize();
 var User = sequelize.import('./user');
 var Contest = sequelize.import('./contest');
-var UserContest = sequelize.import('./UserContest');
+var UserContest = sequelize.import('./userContest');
 
 // 建立模型之间的关系
 User.hasMany(UserContest,  { foreignKey: 'user_id', sourceKey: 'user_id'})
