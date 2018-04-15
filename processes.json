@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "osu-mapping-elo",
-      "cwd": "/srv/elo",
+      "cwd": "/srv/www/osu-mapping-elo",
       "script": "bin/www",
       "log_date_format": "YYYY-MM-DD HH:mm Z",
       "error_file": "/var/log/node-app/node-app.stderr.log",
