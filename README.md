@@ -22,7 +22,7 @@ According to the composition of the judges who finish scoring at last and other 
 - D3: 5 or more judges, including 3 or more (Ex-) BN/QATs.
 - D4: 6 or more judges, including 4 or more (Ex-) BN/QATs.
 
-* D1 is prepared for some test-like competition that only acquires participants to map a short track less than 1 minute, or to do part works like hitsounding or placing notes with certain rhythm. As for now, all existed contests are D2/D3/D4.
+* D1 is prepared for tasks that only acquires participants to map a short track less than 1 minute, or to do part works like hitsounding or placing notes with certain rhythm. As for now, all existed contests are D2/D3/D4.
 
 Contest management and judging must be fair. Issues like unreasonable scoring will cause the contest to be disqualified from system or get dan penalty.
 
