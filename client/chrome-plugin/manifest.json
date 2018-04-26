@@ -1,0 +1,21 @@
+{
+  "name": "mapping-elo",
+  "manifest_version": 2,
+  "version": "0.1",
+  "description": "",
+  "browser_action": {},
+  "content_scripts": [
+    {
+      "matches": [
+        "https://osu.ppy.sh/users/*"
+      ],
+      "js": [
+        "zepto.min.js",
+        "index.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "https://elo.milkitic.name/"
+  ]
+}

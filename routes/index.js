@@ -1,26 +1,32 @@
 var express = require('express');
 var router = express.Router();
-// 引用模型
 var User = require('../model').User;
+var Op = require('sequelize').Op
 
 /**
  * restful api
  * 查询User数据
  */
-router.get('/user', function(req, res, next) {
-  console.log(req.query.user_id)  
-	User.findOne({
+router.get('/user', function (req, res, next) {
+  if (!req.query.user_id || req.query.user_id <= 0) {
+    res.end(JSON.stringify({
+      result: 'fail',
+      message: 'Unranked'
+    }))
+    return
+  }
+  User.findOne({
     where: {
-      user_id: req.query.user_id
+      user_id: {
+        [Op.eq]: req.query.user_id
+      }
     }
-  }).then(function(user){
-    console.log(req.headers)
-    res.set("Access-Control-Allow-Origin", "*");
-    res.set("Access-Control-Allow-Headers", "X-Requested-With");
-    res.set("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
-		res.set('Content-Type', 'text/html; charset=utf-8');    
-		if (user) {
-		  res.end(JSON.stringify({
+  }).then(user => {
+    res.set('Access-Control-Allow-Headers', 'X-Requested-With');
+    res.set('Access-Control-Allow-Methods', 'POST,GET,OPTIONS');
+    res.set('Content-Type', 'text/html; charset=utf-8');
+    if (user) {
+      res.end(JSON.stringify({
         result: 'success',
         user: user
       }));
@@ -30,11 +36,11 @@ router.get('/user', function(req, res, next) {
         message: 'Unranked'
       }))
     }
-	}).catch(next);
+  }).catch(next);
 });
 
 /** default */
-router.get('*', function(req, res, next) {
+router.get('*', function (req, res, next) {
   res.set('Content-Type', 'text/html; charset=utf-8');
   res.end(JSON.stringify({
     result: 'error',
