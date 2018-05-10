@@ -1,7 +1,7 @@
 // google chrome plugin to query elo score of osu! profile
 // todo: new site support first, old site later
-var oldRegExp = /[osu|old].ppy.sh\/u\/(\w+)/i
-var newRegExp = /osu.ppy.sh\/users\/(\w+)/i
+var oldRegExp = /(?:osu|old)\.ppy\.sh\/u\/(\w+)/i
+var newRegExp = /osu\.ppy\.sh\/users\/(\w+)/i
 var user_id = ''
 
 if (location.href.match(oldRegExp)) {
@@ -33,9 +33,9 @@ if (user_id) {
 }
 
 function writeScore (elo, ranking) {
-  $('.profile-info__name').eq(0).after('<span>osu!mapping Elo point: ' + elo + '(#' + ranking + ')<span>' )
+  $('.profile-info__name').eq(0).after('<span>osu!mapping Elo point: ' + elo + '(#' + ranking + ')</span>')
 }
 
 function writeUnranked () {
-  $('.profile-info__name').eq(0).after('<span>osu!mapping Elo point: Unranked <span>' )
+  $('.profile-info__name').eq(0).after('<span>osu!mapping Elo point: Unranked</span>')
 }
