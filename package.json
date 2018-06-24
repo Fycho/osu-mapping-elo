@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "getid": "node ./server/getUserId.js",
+    "rank": "node ./server/rank.js",
+    "elo": "node ./server/elo.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
