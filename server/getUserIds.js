@@ -26,10 +26,10 @@ const getUserId = username => {
   })
 }
 
-sequelize.query('select `value` from `config` where `key` = "apikey"').then(res => {
-  console.log('apikey: ' + res)
-  const baseUrl = `https://osu.ppy.sh/api/get_user?k=${apiKey}&u=`
-  
+sequelize.query('select `value` from `config` where `key` = "apikey"', { raw: true }).then(res => {
+  console.log(res)
+  const baseUrl = `https://osu.ppy.sh/api/get_user?k=${res[0]}&u=`
+  console.log(baseUrl)
   UserContest.findAll({
     where: {
       user_id: null
