@@ -60,6 +60,9 @@ const calcuByStep = (contests, i) => {
     Promise.all(promises).then(() => {
       if (i < contests.length - 1) {
         calcuByStep(contests, ++i)
+      } else {
+        console.log('Successfully done.')
+        process.exit()
       }
     })
   })
