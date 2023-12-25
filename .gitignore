@@ -38,3 +38,4 @@ node_modules
 ./db
 /public/upload
 /tmp
+config.toml
